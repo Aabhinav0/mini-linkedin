@@ -1,0 +1,36 @@
+{
+  "name": "linkedin-clone",
+  "version": "1.0.0",
+  "description": "LinkedIn Clone - Full Stack Application",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.10"
+  },
+  "keywords": [
+    "linkedin",
+    "clone",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "fullstack"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "react-scripts": "^5.0.1"
+  }
+}

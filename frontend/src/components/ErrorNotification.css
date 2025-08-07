@@ -1,0 +1,217 @@
+/* Error Notification Styles */
+.error-notification {
+  position: fixed;
+  z-index: 9999;
+  max-width: 400px;
+  min-width: 300px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.error-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Position variants */
+.error-notification.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.error-notification.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.error-notification.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.error-notification.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.error-notification.top-center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+}
+
+.error-notification.top-center.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+.error-content {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3);
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.error-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff8a80, #ff5722);
+}
+
+.error-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.error-message {
+  flex: 1;
+  min-width: 0;
+}
+
+.error-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.error-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  word-wrap: break-word;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.error-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+.error-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.error-close:active {
+  transform: scale(0.95);
+}
+
+/* Success variant */
+.error-notification.success .error-content {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  box-shadow: 0 8px 32px rgba(76, 175, 80, 0.3);
+}
+
+.error-notification.success .error-content::before {
+  background: linear-gradient(90deg, #81c784, #66bb6a);
+}
+
+/* Warning variant */
+.error-notification.warning .error-content {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  box-shadow: 0 8px 32px rgba(255, 152, 0, 0.3);
+}
+
+.error-notification.warning .error-content::before {
+  background: linear-gradient(90deg, #ffb74d, #ffa726);
+}
+
+/* Info variant */
+.error-notification.info .error-content {
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  box-shadow: 0 8px 32px rgba(33, 150, 243, 0.3);
+}
+
+.error-notification.info .error-content::before {
+  background: linear-gradient(90deg, #64b5f6, #42a5f5);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .error-notification {
+    max-width: calc(100vw - 40px);
+    min-width: auto;
+  }
+  
+  .error-notification.top-right,
+  .error-notification.top-left {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+  
+  .error-notification.bottom-right,
+  .error-notification.bottom-left {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+  }
+  
+  .error-content {
+    padding: 14px;
+  }
+  
+  .error-title {
+    font-size: 13px;
+  }
+  
+  .error-text {
+    font-size: 12px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .error-content {
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.4);
+  }
+}
+
+/* Animation for multiple notifications */
+.error-notification + .error-notification {
+  margin-top: 10px;
+}
+
+/* Accessibility */
+.error-notification:focus-within {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.error-close:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+} 
