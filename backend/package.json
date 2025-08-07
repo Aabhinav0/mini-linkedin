@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
+    "build": "echo 'No build step required for backend'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -22,6 +23,9 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "keywords": [
     "linkedin",
     "clone",
@@ -32,4 +36,4 @@
   ],
   "author": "",
   "license": "ISC"
-} 
+}
