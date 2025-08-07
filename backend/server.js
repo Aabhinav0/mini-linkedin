@@ -5,7 +5,7 @@ const path = require('path');
 require('dotenv').config({ path: './config.env' });
 
 const app = express();
-const url=`mongodb+srv://abhinav2222:Abhi478@rtecl45@abhinav2222.aalfoug.mongodb.net/?retryWrites=true&w=majority&appName=abhinav2222`;
+const url=`mongodb+srv://abhinav2222:Abhi478@rtecl45@abhinav2222.aalfoug.mongodb.net/?retryWrites=true&w=majority&appName=abhinav2222`
 // Connect to MongoDB
 mongoose.connect(url)
   .then(() => console.log('Connected to MongoDB'))
@@ -133,3 +133,4 @@ app.listen(PORT, () => {
   console.log(`Test the API at: http://localhost:${PORT}/api/test`);
 
 }); 
+
