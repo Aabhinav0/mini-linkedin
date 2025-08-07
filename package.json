@@ -1,5 +1,5 @@
 {
-  "homepage":"https://mini-linkedin-1-enmn.onrender.com"
+  "homepage":"https://mini-linkedin-1-enmn.onrender.com",
   "name": "linkedin-clone",
   "version": "1.0.0",
   "description": "LinkedIn Clone - Full Stack Application",
@@ -38,6 +38,7 @@
   }
  
 }
+
 
 
 
